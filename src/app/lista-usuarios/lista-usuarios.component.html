@@ -1,0 +1,9 @@
+<h2>Lista de Usuarios</h2>
+
+<div class="card-container">
+  <div class="card" *ngFor="let usuario of usuarios">
+    <h3>{{ usuario.nombre }}</h3>
+    <p>{{ usuario.correoElectronico }}</p>
+    <img [src]="usuario.imagen" alt="Imagen de usuario">
+  </div>
+</div>

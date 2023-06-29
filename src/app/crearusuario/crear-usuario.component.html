@@ -1,0 +1,36 @@
+<div class="container">
+  <mat-card>
+    <div class="mat-card-title">Crear usuarios</div>
+
+    <form (ngSubmit)="crearUsuario()" class="form-container">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Nombre" [(ngModel)]="usuario.nombre" [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput type="email" placeholder="Correo Electrónico" [(ngModel)]="usuario.correoElectronico" name="correoElectronico" required>
+      </mat-form-field>
+      <mat-form-field>
+        <div class="file-input">
+          <input type="file" (change)="onFileChange($event)" accept="image/*" required>
+          <input matInput type="text" placeholder="Imagen" [(ngModel)]="imagenName" readonly>
+          <button mat-button matSuffix mat-icon-button (click)="seleccionarImagen()">
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Dirección" [(ngModel)]="usuario.direccion" name="direccion">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Número de Teléfono" [(ngModel)]="usuario.numeroTelefono" name="numeroTelefono">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="usuario.password" name="password" required>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" type="submit" class="neon-button">Crear Usuario</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

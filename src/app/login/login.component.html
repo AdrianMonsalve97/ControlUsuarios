@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-card>
+    <h2>Iniciar sesión</h2>
+    <form (ngSubmit)="login()" class="form-container">
+      <mat-form-field class="vertical-input">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput type="text" placeholder="Correo electrónico" [(ngModel)]="correoElectronico" name="correoElectronico" required>
+      </mat-form-field>
+
+      <mat-form-field class="vertical-input">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+      <button mat-raised-button class="neon-button" color="primary" type="submit">Iniciar sesión</button>
+
+
+    </form>
+
+    <!-- Alerta de login exitoso -->
+    <div *ngIf="loginSuccess" class="alert alert-success">
+      ¡Inicio de sesión exitoso!
+    </div>
+
+    <!-- Alerta de error -->
+    <div *ngIf="error" class="alert alert-danger">
+      Error: {{ error }}
+    </div>
+  </mat-card>
+</div>
+
+
+
